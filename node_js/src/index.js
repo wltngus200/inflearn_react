@@ -16,7 +16,7 @@ const min1=sub(2,1);
 console.log(sum1, min1);
 */
 
-/* ES Module(ESM) */
+/* ES Module(ESM) 
         // 가져오고자 하는 값 from 모듈 경로(확장자 필수!)
 import {add, sub} from "./math.js";
 console.log(add(1,2));
@@ -31,3 +31,12 @@ console.log(mul(1,5));
 
 // 동일한 경로의 import문 합치는 것도 가능
 import mul, {add, sub} from "./math.js";
+*/
+
+/* 라이브러리 사용 - 모듈 시스템 */
+                        // 라이브러리 이름만 명시
+import randomColor from "randomcolor";
+
+const color=randomColor();
+console.log(color);
+
