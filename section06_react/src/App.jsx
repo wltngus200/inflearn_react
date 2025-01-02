@@ -1,32 +1,24 @@
 import './App.css';
-// 컴포넌트 분리 후 기본값 반환 및 임포트 -> vite로 만든 리액트 앱에서는 확장자 생략 가능
-import Header from './components/Header'
-import Main from './components/Main'
-import Footer from './components/Footer'
-import Button from './components/Button'
+// state 생성에는 리액트 제공 내장 함수 사용 -> 2개의 요소(state의 값, 함수)를 담은 배열 반환
+import {useState} from "react";
 
-function App() {
-  const buttonProps={
-    text:"메일",
-    color:"red",
-    a:1,
-    b:2,
-    c:3
-  }
+// State
+function App(){
+  // 배열의 구조분해 할당(초기값, 상태변화 함수)
+  const [count, setCount]=useState(0);
+  const [light, setLight]=useState("OFF")
   return (
     <>
-      {/* props가 많을 경우 하나의 객체로 묶어 전달 -> 스프레드 연산자 */}
-        <Button {...buttonProps}/>
-        <Button text={"카페"}>
-          <Header/>
-        </Button>
-        <Button text={"블로그"}>
-          {/* props는 자바스크립트 값뿐만 아니라 HTML 요소, React 컴포넌트 전달 가능 */}
-          <div>자식 요소</div>
-        </Button>
+      <div>
+        <h1>{light}</h1>
+        <button onClick={()=>{setLight(light==="ON"?"OFF":"ON")}}>{light==="ON"?"끄기":"켜기"}</button>
+      </div>
+      <div>
+        <h1>{count}</h1>
+        <button onClick={()=>{setCount(count+1)}}>+</button>
+      </div>
     </>
-  )
-  // Header 컴포넌트 배치 -> 부모 자식 컴포넌트
+  );
 }
 
 export default App

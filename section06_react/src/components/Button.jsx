@@ -11,7 +11,7 @@ const Button =(props)=>{
 const Button =({text, color, children})=>{
     // 이벤트 핸들러에서 설정될 함수가 길 경우
     // 이벤트 객체 리액트에서 발생하는 모든 이벤트는 이벤트 핸들러 함수를 호출하며 매개변수로 이벤트 객체 제공
-    const onClickButton=(e)=>{ // e : 합성 이벤트 객체
+    const onClickButton=(e)=>{ // e : 합성 이벤트 객체 
         console.log(e);
         console.log(text);
     }
